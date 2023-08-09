@@ -8,6 +8,6 @@ RUN mvn -f /opt/pom.xml clean install package
 #Create an Image
 FROM tomcat:latest
 EXPOSE 8080
-COPY --from=stage1 addressbook.war /usr/local/tomcat/webapps
+COPY --from=stage1 /opt/addressbook.war /usr/local/tomcat/webapps
 CMD ["catalina.sh", "run"]
 
